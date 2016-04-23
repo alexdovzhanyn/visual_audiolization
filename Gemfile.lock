@@ -1,0 +1,22 @@
+GIT
+  remote: git://github.com/CodeMonkeySteve/ruby-mplayer
+  revision: c71b36adb456237454759f81e94eb1c0e2f899e7
+  specs:
+    mplayer (1.0.0)
+      em-synchrony
+      eventmachine
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    em-synchrony (1.0.5)
+      eventmachine (>= 1.0.0.beta.1)
+    espeak-ruby (1.0.2)
+    eventmachine (1.2.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  espeak-ruby
+  mplayer!
