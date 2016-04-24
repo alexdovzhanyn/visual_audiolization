@@ -1,6 +1,4 @@
 require 'mplayer-ruby'
-$row = ["f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, ]
-$totalSong = ""
 
 class String
   def bg_black;       "\e[40m#{self}\e[0m" end
@@ -22,17 +20,20 @@ class String
   def gray;           "\e[37m#{self}\e[0m" end
 end
 
+$row = ["f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, "f".bg_blue.blue, ]
+$totalSong = ""
+
 def generate()
   columnChangeVal = rand(0..80)
   columnChangeVal.times do
     columnToChange = rand(0..80)
     color = rand(0..4)
     case color
-    when 0 then $row[columnToChange] = "a".bg_blue.blue(); $totalSong = $totalSong + "a"
-    when 1 then $row[columnToChange] = "b".bg_magenta.magenta(); $totalSong = $totalSong + "b"
-    when 2 then $row[columnToChange] = "c".bg_cyan.cyan(); $totalSong = $totalSong + "c"
-    when 3 then $row[columnToChange] = "d".bg_green.green(); $totalSong = $totalSong + "d"
-    when 4 then $row[columnToChange] = "e".bg_brown.brown(); $totalSong = $totalSong + "e"
+      when 0 then $row[columnToChange] = "a".bg_blue.blue(); $totalSong = $totalSong + "a"
+      when 1 then $row[columnToChange] = "b".bg_magenta.magenta(); $totalSong = $totalSong + "b"
+      when 2 then $row[columnToChange] = "c".bg_cyan.cyan(); $totalSong = $totalSong + "c"
+      when 3 then $row[columnToChange] = "d".bg_green.green(); $totalSong = $totalSong + "d"
+      when 4 then $row[columnToChange] = "e".bg_brown.brown(); $totalSong = $totalSong + "e"
     end
   end
   puts $row.join("").to_s
@@ -52,6 +53,15 @@ end
 
 inst = "drum1"
 inst2 = "drum2"
+inst3 = "drum3"
+
+def randomRap
+  rapId = rand(0..2) + 1
+  mp = MPlayer::Slave.new "#{rapId}.mp3"
+end
+
+randomRap()
+sleep 5
 
 $totalSong.split("").each do |s|
   sleep @sleepTime
@@ -59,22 +69,28 @@ $totalSong.split("").each do |s|
     when "a"
       play(inst)
     when "b"
-      play(inst2)
+      play(inst3)
+      sleep 0.07
+      play(inst)
     when "c"
+      play(inst3)
+    when "d"
       play(inst)
-      sleep @sleepTime
-      play(inst)
-      sleep @sleepTime
+      sleep 0.3
+      play(inst3)
+      sleep 0.3
       play(inst2)
     when "e"
-      play(inst2)
-      sleep @sleepTime
       play(inst)
-      sleep @sleepTime
-      play(inst2)
+      sleep 0.3
+      play(inst)
+      sleep 0.3
+      play(inst3)
+      sleep 0.2
+      play(inst)
     when "f"
-      play(inst2)
-      sleep @sleepTime
-      play(inst2)
+      play(inst)
+      sleep 0.3
+      play(inst)
   end
 end
